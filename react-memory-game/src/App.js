@@ -57,15 +57,20 @@ class App extends Component {
     return (
       <div>
         <Jumbotron score={this.state.score} highScore={this.state.highScore} />
-        <div className="container">
+        <div className="container d-flex">
+          <div className="row">
           {this.state.cards.map(cardRender => (
-            <div className='col-md-3' id={cardRender.id}>
-              <Card
+            // <div className='col-md-3' id={cardRender.id}>
+              <Card 
+                className="col-md-3"
+                id={cardRender.id}
+                key={cardRender.id}
                 image={cardRender.image}
                 randomCards={() => { this.randomCards(this.state.cards) }}
                 updateScore={() => { this.updateScore(cardRender.id) }} />
-            </div>
+            // </div>
           ))}
+          </div>
         </div>
       </div>
     )

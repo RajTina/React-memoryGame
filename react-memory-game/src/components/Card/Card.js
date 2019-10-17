@@ -9,8 +9,9 @@ const onClick = (props) => {
 const Card = (props) => (
     <div>
       <a className="thumbnail" onClick={() => onClick(props)}>
-        <img src={props.image} />
+        <img   alt = {props.name} className="image" src={props.image} />
       </a>
+    
  </div>
 )
 
